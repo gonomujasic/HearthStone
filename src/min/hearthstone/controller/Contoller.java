@@ -58,32 +58,13 @@ public class Contoller {
 		} else if(service.getClass().getSimpleName().substring(0, 4).equals("TernO")){
 			
 			Service decoratedTernOver = new TernOverDecorator(service);
-			decoratedTernOver.execute(gameInfo, message);
+			decoratedTernOver.execute(gameInfo, message, clients);
 		}
 		//서비스 종류에 따라 
 		
 		
 		
-		if (gameInfo.getPlayerOne().getSessionID() == session.getId() && gameInfo.getTernNumber() % 2 == 0) {
-			// 플레이어원의 턴
-			if (message.startsWith("!")) {
-				int ternNum = gameInfo.getTernNumber();
-				gameInfo.setTernNumber(ternNum++);
-			}
-
-		} else if (gameInfo.getPlayerTwo().getSessionID() == session.getId() && gameInfo.getTernNumber() % 2 != 0) {
-			// 플레이어투의 턴
-			if (message.startsWith("!")) {
-				int ternNum = gameInfo.getTernNumber();
-				gameInfo.setTernNumber(ternNum++);
-			}
-
-		} else {
-			for (Session client : clients) {
-				client.getBasicRemote().sendText(",");
-			}
-			// 명령을 내릴 수 있는 턴이 아님
-		}
+		
 
 
 
