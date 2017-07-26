@@ -2,20 +2,8 @@ package min.hearthstone.card.minion;
 
 public class MinionCardFactory {
 
-	private static class MinionCardFactorySingleton {
-
-		private static MinionCardFactory minionCardFactory = new MinionCardFactory();
-
-	}
-
-	public static MinionCardFactory getMinionCardFactory() {
-
-		return MinionCardFactorySingleton.minionCardFactory;
-
-	}
-
 	// 다른 방법 없나??...
-	public MinionCard getMinionCard(MinionCardEnum minionCardEnum) {
+	public static MinionCard getMinionCard(MinionCardEnum minionCardEnum) {
 
 		/*
 		 * if(MinionCardEnum.M_FLAME_OF_AZZINOTH.equals(minionCardEnum)){ return

@@ -6,12 +6,12 @@ public class SpellCardFactory {
 
 	private static class SpellCardSingleton{
 		
-		private static EnumMap<SpellCardEnum,SpellCard> spellCard = new EnumMap<SpellCardEnum, SpellCard>(SpellCardEnum.class); 
+		private static final EnumMap<SpellCardEnum,SpellCard> SPELLCARD = new EnumMap<SpellCardEnum, SpellCard>(SpellCardEnum.class); 
 		
 	}
 	
 	public static EnumMap<SpellCardEnum,SpellCard> getSpellMap(){
-		return SpellCardSingleton.spellCard;
+		return SpellCardSingleton.SPELLCARD;
 	}
 	
 	private void loadSpellCard(){
@@ -20,6 +20,9 @@ public class SpellCardFactory {
 		
 		if(spellCard.isEmpty()){
 			getSpellMap().put(SpellCardEnum.S_MIRROR_IMAGE, new MirrorImage());
+			getSpellMap().put(SpellCardEnum.S_COIN, new Coin());
+			getSpellMap().put(SpellCardEnum.S_ARCANE_EXPLOSION, new ArcaneExplosion());
+			getSpellMap().put(SpellCardEnum.S_FROSTBOLT, new Frostbolt());
 		
 		}
 	}

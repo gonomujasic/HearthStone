@@ -6,12 +6,12 @@ public class WeaponCardFactory {
 
 	private static class WeaponCardSingleton{
 		
-		private static EnumMap<WeaponCardEnum, WeaponCard> enumMap = new EnumMap<WeaponCardEnum, WeaponCard>(WeaponCardEnum.class);
+		private static final EnumMap<WeaponCardEnum, WeaponCard> ENUMMAP = new EnumMap<WeaponCardEnum, WeaponCard>(WeaponCardEnum.class);
 		
 	}
 	
 	public static EnumMap<WeaponCardEnum, WeaponCard> getWeaponCardMap(){
-		return WeaponCardSingleton.enumMap;
+		return WeaponCardSingleton.ENUMMAP;
 	}
 	
 	private void loadWeaponCard(){

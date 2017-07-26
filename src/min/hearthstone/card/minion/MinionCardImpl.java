@@ -4,21 +4,13 @@ import java.util.Set;
 
 import min.hearthstone.card.CardImpl;
 import min.hearthstone.card.Species;
-import min.hearthstone.character.CharacterImpl;
-import min.hearthstone.game.GameInfo;
 
 public abstract class MinionCardImpl extends CardImpl implements MinionCard{
 
 	private int attack;
 	private int health;
 	private Enum<Species> species;
-	private Set<MinionState> states;
-	
-	void minionAction(GameInfo gameInfo, CharacterImpl player, String message) {
-		
-		
-		
-	}
+	private Set<MinionStateNAbility> states;
 	
 	public int getAttack() {
 		return attack;
@@ -38,10 +30,10 @@ public abstract class MinionCardImpl extends CardImpl implements MinionCard{
 	public void setSpecies(Enum<Species> species) {
 		this.species = species;
 	}
-	public Set<MinionState> getMinionStates() {
+	public Set<MinionStateNAbility> getMinionStates() {
 		return states;
 	}
-	public void setMinionStates(Set<MinionState> states) {
+	public void setMinionStates(Set<MinionStateNAbility> states) {
 		this.states = states;
 	}
 	

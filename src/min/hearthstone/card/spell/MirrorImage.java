@@ -16,6 +16,7 @@ public class MirrorImage extends SpellCardImpl{
 		this.setCardClass(CardClass.FREE);
 		this.setDescription("Summon two 0/2 minions with Taunt");
 		this.setCardJob(CardJob.MAGE);
+		this.setTarget(false);
 	}
 	
 	@Override

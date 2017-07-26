@@ -8,7 +8,6 @@ import min.hearthstone.card.CardJob;
 import min.hearthstone.card.CardPackage;
 import min.hearthstone.card.CardState;
 import min.hearthstone.card.Species;
-import min.hearthstone.character.CharacterImpl;
 import min.hearthstone.game.GameInfo;
 
 public class FlameOfAzzinoth extends MinionCardImpl {
@@ -22,26 +21,16 @@ public class FlameOfAzzinoth extends MinionCardImpl {
 		this.setDescription("");
 		this.setTier(0);
 		this.setSpecies(Species.ELEMENTS);
-		Set<MinionState> minionStateSet = EnumSet.of(MinionState.NORMAL) ;
+		Set<MinionStateNAbility> minionStateSet = EnumSet.of(MinionStateNAbility.NORMAL) ;
 		this.setMinionStates(minionStateSet);
 		this.setCardState(CardState.OPERATIONAL);
 		this.setCardJob(CardJob.NEUTRAL);
 	}
 	
 	@Override
-	public void minionAction(GameInfo gameInfo, CharacterImpl player, String message) {
+	public void minionSpecialAction(GameInfo gameInfo, String message) {
 		// TODO Auto-generated method stub
 		
 	}
 
-	@Override
-	public void minionSpecialAction(GameInfo gameInfo, CharacterImpl player, String message) {
-		// TODO Auto-generated method stub
-		
-	}
-
-
-
-	
-	
 }
