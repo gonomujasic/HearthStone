@@ -50,11 +50,11 @@ public class Contoller {
 		
 		GameInfo gameInfo = GameInfoFactory.getGameInfo();
 		Service service = ServiceFactory.getServiceFactory().getService(message);
-		service.execute(gameInfo, message);
+		service.execute(gameInfo, message,clients);
 		if(service.getClass().getSimpleName().substring(0, 4).equals("Basic")){//처음 세팅
 			//셋팅된 값을 보내야 함. 어케 해야 하나..
 			//손안에 든 카드 정보 po,pt꺼, 남은 카드 개수를 보내야 함. 영웅 정보,  
-			service.execute(gameInfo, message);
+			service.execute(gameInfo, message,clients);
 		} else if(service.getClass().getSimpleName().substring(0, 4).equals("TernO")){
 			
 			Service decoratedTernOver = new TernOverDecorator(service);
