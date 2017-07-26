@@ -10,10 +10,6 @@ import min.hearthstone.game.GameInfo;
 public class BasicSettingService implements Service {
 
 	@Override
-	public void execute(GameInfo gameInfo, String message) {
-		
-	}
-	
 	public void execute(GameInfo gameInfo, String message, Set<Session> clients) {
 		
 		for (Session client : clients) {
